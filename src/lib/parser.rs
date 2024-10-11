@@ -1,8 +1,6 @@
 use serde::Deserialize;
 use serde_xml_rs::from_str;
 use std::error::Error;
-use std::fs::File;
-use std::io::{BufRead, BufReader, Write};
 
 #[derive(Debug, Deserialize, PartialEq)]
 struct GroupHeader {

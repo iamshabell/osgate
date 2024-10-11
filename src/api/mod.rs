@@ -1,4 +1,4 @@
-use actix_web::{post, web, HttpResponse, Responder};
+use actix_web::{post, HttpResponse, Responder};
 
 use crate::message::{transformer, xml_validator};
 
