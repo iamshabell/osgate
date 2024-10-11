@@ -1,10 +1,7 @@
-use std::io::Read;
-
 use crate::lib::parser::XmlSchemaParser;
 
 pub fn xml_validator(xml: &str) -> bool {
-    let xsd_data = r#"
-<?xml version="1.0" encoding="UTF-8"?>
+    let xsd_data = r#"<?xml version="1.0" encoding="UTF-8"?>
 <Document xmlns="urn:iso:20022:tech:xsd:pain.001.001.03">
     <CstmrCdtTrfInitn>
         <GrpHdr>
@@ -84,12 +81,11 @@ pub fn xml_validator(xml: &str) -> bool {
             </CdtTrfTxInf>
         </PmtInf>
     </CstmrCdtTrfInitn>
-</Document>
-    "#;
+</Document>"#;
 
     let mut parser = XmlSchemaParser::new(xsd_data);
 
-    parser.parse();
+    let _ = parser.parse();
 
     let result = parser.validate(xml);
 

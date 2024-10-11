@@ -158,34 +158,20 @@ impl XmlSchemaParser {
     }
 
     pub fn parse(&mut self) -> Result<(), String> {
-        println!("Parsing schema");
-        let pain001: Pain001 = match from_str::<Pain001>(&self.schema) {
-            Ok(pain001) => pain001,
-            Err(_) => {
-                println!("Failed to parse schema");
-                return Err("Failed to parse schema".to_string());
-            }
+        let parsed_schema = match self.to_type(&self.schema) {
+            Ok(parsed_schema) => parsed_schema,
+            Err(_) => return Err("Failed to parse schema".to_string()),
         };
 
-        self.current_schema = pain001;
-
-        println!("Schema parsed successfully {:?}", self.current_schema);
+        self.current_schema = parsed_schema;
         Ok(())
     }
 
     pub fn validate(&self, xml: &str) -> bool {
-        // Parse the XML string into a Pain001 struct
-        // If the XML string is not valid, return false
-        // Then check with self schema if the XML string is validate
-        //
-
-        let pain001: Pain001 = match from_str(xml) {
+        let pain001 = match self.to_type(xml) {
             Ok(pain001) => pain001,
             Err(_) => return false,
         };
-
-        println!("pain001 {:?}", pain001);
-        println!("current_schema {:?}", self.current_schema);
 
         self.match_schema(pain001)
     }
@@ -196,10 +182,15 @@ impl XmlSchemaParser {
         }
 
         if pain001 == self.current_schema {
-            println!("Schema matched");
             return true;
         }
 
         false
+    }
+
+    fn to_type(&self, xml: &str) -> Result<Pain001, Box<dyn Error>> {
+        let pain001: Pain001 = from_str(xml)?;
+
+        Ok(pain001)
     }
 }

@@ -1,7 +1,5 @@
 use actix_web::{web, App, HttpServer};
 
-extern crate xmlschema;
-
 mod api;
 mod lib;
 mod message;

@@ -716,7 +716,6 @@ dependencies = [
  "serde-xml-rs",
  "serde_json",
  "validator",
- "xmlschema",
 ]
 
 [[package]]
@@ -1289,12 +1288,6 @@ name = "xml-rs"
 version = "0.8.22"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "af4e2e2f7cba5a093896c1e150fbfe177d1883e7448200efb81d40b9d339ef26"
-
-[[package]]
-name = "xmlschema"
-version = "0.0.1"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "8db9aaf2a9627cd514382914276c238dc8cf0bcb936323acad77a51659d05350"
 
 [[package]]
 name = "zerocopy"
