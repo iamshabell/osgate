@@ -1,6 +1,10 @@
 use actix_web::{web, App, HttpServer};
 
+extern crate xmlschema;
+
 mod api;
+mod lib;
+mod message;
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
