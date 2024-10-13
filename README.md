@@ -7,4 +7,5 @@ By managing and transforming requests, it enhances operational efficiency and im
 
 - Transform ISO 20022 XML messages to JSON.
 - Validate XML structure against ISO 20022 standards.
-- *Future-* Support for JSON to XML transformations.
+- Support for JSON to XML transformations.
+- *Future-* Support for communication over gRPC
