@@ -8,6 +8,13 @@ transform() {
     -d "@$DataXml"
 }
 
+transform-json() {
+  DataJson="examples/data.json"
+  curl -X POST http://127.0.1:8080/transform/json \
+    -H "Content-Type: application/json" \
+    -d "@$DataJson"
+}
+
 validate() {
   DataXml="examples/data.xml"
   curl -X POST http://127.0.0.1:8080/validate \
@@ -25,6 +32,10 @@ fi
 case $1 in
 --transform)
   transform
+  ;;
+
+--transform-json)
+  transform-json
   ;;
 --validate)
   validate

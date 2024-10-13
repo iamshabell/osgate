@@ -1,0 +1,85 @@
+{
+  "GrpHdr": {
+    "MsgId": "1234567890",
+    "CreDtTm": "2024-10-11T10:00:00",
+    "NbOfTxs": "1",
+    "CtrlSum": "1500.00",
+    "InitgPty": {
+      "Nm": "John Doe",
+      "Id": {
+        "OrgId": {
+          "Othr": {
+            "Id": "123456789"
+          }
+        }
+      }
+    }
+  },
+  "PmtInf": [
+    {
+      "PmtInfId": "987654321",
+      "PmtMtd": "TRF",
+      "BtchBookg": false,
+      "NbOfTxs": "1",
+      "CtrlSum": "1500.00",
+      "PmtTpInf": {
+        "SvcLvl": {
+          "Cd": "SEPA"
+        },
+        "LclInstrm": {
+          "Cd": "CORE"
+        },
+        "SeqTp": "FRST"
+      },
+      "ReqdExctnDt": "2024-10-11",
+      "Dbtr": {
+        "Nm": "John Doe",
+        "Id": {
+          "OrgId": {
+            "Othr": {
+              "Id": "123456789"
+            }
+          }
+        },
+        "CtryOfRes": "US"
+      },
+      "DbtrAcct": {
+        "Id": {
+          "IBAN": "US1234567890123456789012345"
+        }
+      },
+      "CdtTrfTxInf": [
+        {
+          "PmtId": {
+            "EndToEndId": "ABC123"
+          },
+          "Amt": {
+            "InstdAmt": {
+              "$value": "1500.00",
+              "Ccy": "USD"
+            }
+          },
+          "Cdtr": {
+            "Nm": "Jane Smith",
+            "Id": {
+              "OrgId": {
+                "Othr": {
+                  "Id": "987654321"
+                }
+              }
+            },
+            "CtryOfRes": "GB"
+          },
+          "CdtrAcct": {
+            "Id": {
+              "IBAN": "GB9876543210123456789012345"
+            }
+          },
+          "RmtInf": {
+            "Ustrd": "Invoice payment"
+          }
+        }
+      ]
+    }
+  ]
+}

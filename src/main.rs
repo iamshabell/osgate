@@ -9,6 +9,7 @@ async fn main() -> std::io::Result<()> {
     HttpServer::new(|| {
         App::new()
             .service(api::transform_message)
+            .service(api::transform_json_message)
             .service(api::validate_message)
             .route("/hey", web::get().to(|| async { "Hello, world!" }))
     })
