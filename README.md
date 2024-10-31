@@ -21,6 +21,6 @@ cargo run
 The server will be available at `http://127.0.0.1:8080`.
 
 ##### API Endpoints
-- `/transform: Transforms ISO 20022 XML messages to JSON.
+- `/transform`: Transforms ISO 20022 XML messages to JSON.
 - `/transform/json`: Transforms JSON messages to ISO 20022 XML.
 - `/validate`: Validates XML structure against ISO 20022 standards.
